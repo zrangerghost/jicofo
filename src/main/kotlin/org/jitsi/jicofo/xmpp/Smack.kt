@@ -32,6 +32,7 @@ import org.jitsi.xmpp.extensions.jitsimeet.*
 import org.jivesoftware.smack.SmackConfiguration
 import org.jivesoftware.smack.parsing.ExceptionLoggingCallback
 import org.jivesoftware.smack.provider.ProviderManager
+import org.jivesoftware.smackx.bytestreams.socks5.Socks5Proxy
 
 fun initializeSmack() {
     SmackConfiguration.setDefaultReplyTimeout(15000)
@@ -39,7 +40,7 @@ fun initializeSmack() {
     // the other conferences.
     SmackConfiguration.setDefaultParsingExceptionCallback(ExceptionLoggingCallback())
 
-    Socks5Proxy.setLocalSocks5ProxyEnabled(false)
+//    Socks5Proxy.setLocalSocks5ProxyEnabled(false)
     registerXmppExtensions()
 }
 

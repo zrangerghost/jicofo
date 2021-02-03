@@ -1,8 +1,7 @@
 package org.jitsi.jicofo.wb;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import org.jitsi.jicofo.*;
-import org.jxmpp.jid.Jid;
+import org.jxmpp.jid.EntityBareJid;
 
 import java.util.List;
 import java.util.Objects;
@@ -26,7 +25,7 @@ public class WbServiceImpl implements WbService{
 
 
 
-    public void sendMessage(EntityBareJid roomName,String sid,String message){
+    public void sendMessage(EntityBareJid roomName, String sid, String message){
         JitsiMeetConferenceImpl conference = getFocusManager().getConference(roomName);
         if(conference == null){
             throw new IllegalArgumentException("can not find conference by " + roomName);
