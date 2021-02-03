@@ -2539,6 +2539,11 @@ public class JitsiMeetConferenceImpl
         return includeInStatistics;
     }
 
+    @Override
+    public List<Participant> getAllParticipants() {
+        return participants;
+    }
+
     private FocusManager getFocusManager()
     {
         return jicofoServices.getFocusManager();

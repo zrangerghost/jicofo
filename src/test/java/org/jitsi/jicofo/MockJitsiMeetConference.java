@@ -108,4 +108,9 @@ public class MockJitsiMeetConference
     {
         return true;
     }
+
+    @Override
+    public List<Participant> getAllParticipants() {
+        return null;
+    }
 }

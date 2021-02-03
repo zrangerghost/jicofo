@@ -104,4 +104,10 @@ public interface JitsiMeetConference
      * Whether this conference should be considered when generating statistics.
      */
     boolean includeInStatistics();
+
+    /**
+     * Gets all participant in the conference
+     * @return
+     */
+    List<Participant> getAllParticipants();
 }

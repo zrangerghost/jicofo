@@ -34,8 +34,8 @@ import java.util.*;
 import static java.time.temporal.ChronoUnit.SECONDS;
 
 /**
- * Class represent Jitsi Meet conference participant. Stores information about
- * Colibri channels allocated, Jingle session and media sources.
+ * Class represent Jitsi Meet conference participant.
+ * Stores information about Colibri channels allocated, Jingle session and media sources.
  *
  * @author Pawel Domas
  * @author Boris Grozev

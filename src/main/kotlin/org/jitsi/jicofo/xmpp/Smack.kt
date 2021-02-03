@@ -28,21 +28,10 @@ import org.jitsi.xmpp.extensions.jibri.JibriIqProvider
 import org.jitsi.xmpp.extensions.jibri.JibriStatusPacketExt
 import org.jitsi.xmpp.extensions.jingle.JingleIQ
 import org.jitsi.xmpp.extensions.jingle.JingleIQProvider
-import org.jitsi.xmpp.extensions.jitsimeet.BridgeSessionPacketExtension
-import org.jitsi.xmpp.extensions.jitsimeet.ConferenceIqProvider
-import org.jitsi.xmpp.extensions.jitsimeet.IceStatePacketExtension
-import org.jitsi.xmpp.extensions.jitsimeet.LoginUrlIqProvider
-import org.jitsi.xmpp.extensions.jitsimeet.LogoutIqProvider
-import org.jitsi.xmpp.extensions.jitsimeet.RegionPacketExtension
-import org.jitsi.xmpp.extensions.jitsimeet.StatsId
-import org.jitsi.xmpp.extensions.jitsimeet.TranscriptionRequestExtension
-import org.jitsi.xmpp.extensions.jitsimeet.TranscriptionStatusExtension
-import org.jitsi.xmpp.extensions.jitsimeet.UserInfoPacketExt
-import org.jitsi.xmpp.extensions.jitsimeet.VideoMutedExtension
+import org.jitsi.xmpp.extensions.jitsimeet.*
 import org.jivesoftware.smack.SmackConfiguration
 import org.jivesoftware.smack.parsing.ExceptionLoggingCallback
 import org.jivesoftware.smack.provider.ProviderManager
-import org.jivesoftware.smackx.bytestreams.socks5.Socks5Proxy
 
 fun initializeSmack() {
     SmackConfiguration.setDefaultReplyTimeout(15000)
@@ -51,7 +40,6 @@ fun initializeSmack() {
     SmackConfiguration.setDefaultParsingExceptionCallback(ExceptionLoggingCallback())
 
     Socks5Proxy.setLocalSocks5ProxyEnabled(false)
-
     registerXmppExtensions()
 }
 
