@@ -78,3 +78,26 @@ cd /etc/nginx/sites-enabled
 ln -s ../sites-available/ncse.example.com ncse.example.com
 ~~~
 
+自签名（内网环境)
+
+~~~shell
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/nsce.example.org.key -out /etc/ssl/certs/nsce.example.org
+~~~
+
+将生成的签名文件放到/etc/nginx/sites-available/ncse.example.org下
+
+~~~:shell
+cd /etc/nginx/sites-available/ncse.example.org
+
+#添加如下内容
+ssl_certificate /etc/ssl/certs/ncse.example.org.crt;
+ssl_certificate_key /etc/ssl/private/ncse.example.org.key;
+
+#配置443跳转
+sudo vi /etc/nginx/sites-available/default
+#添加如下内容
+server_name ncse.example.org
+return 301 https://$server_name$request_uri;  
+~~~
+
+
